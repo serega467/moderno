@@ -1,0 +1,23 @@
+html{
+    box-sizing: border-box;
+}
+*,
+*::before,
+*::after{
+    box-sizing: inherit;
+}
+
+.test{
+    font-size: 12px;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+body {
+    background-color: aquamarine;
+}
+
+.box{
+    display: flex;
+}

@@ -13,7 +13,7 @@ const sass = require('gulp-sass')(require('sass')),
 //     sass = require('gulp-sass');
 
 gulp.task('sass', function () {
-    return gulp.src('app/scss/style.scss')
+    return gulp.src('app/scss/**/*.scss')
         .pipe(sass({ outputStyle: 'compressed' }))
         .pipe(rename({ suffix: '.min' }))   //переименование style.css в style.min.css 
         .pipe(autoprefixer({
@@ -71,7 +71,7 @@ gulp.task('browser-sync', function() {
 // автоматически, без необходимости ввода команды в терминале: gulp sass
 
 gulp.task('watch', function () {
-    gulp.watch('app/scss/style.scss', gulp.parallel('sass'));
+    gulp.watch('app/scss/**/*.scss', gulp.parallel('sass')); //**, *. чтобы Gulp следил за всеми файлами
     gulp.watch('app/*.html', gulp.parallel('html'));
     gulp.watch('app/js/*.js', gulp.parallel('js'));
 });

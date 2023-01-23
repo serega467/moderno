@@ -85,13 +85,13 @@
     &-title {
         margin-bottom: 28px;
         font-size: 48px;
-        font-weight: 700;
+        @include f700;
         line-height: 72 px;
     }
 
     &-text {
         margin-bottom: 50px;
-        font-weight: 700;
+        @include f700;
         line-height: 30 px;
         font-size: 20px;
     }
@@ -109,7 +109,7 @@
             height: 56px;
             border: none;
             font-size: 14px;
-            font-weight: 500;
+            @include f500;
             padding-left: 25px;
             padding-right: 60px;
 
@@ -119,7 +119,7 @@
 
             &::placeholder {
                 color: #90a4ae;
-                font-weight: 500;
+                @include f500;
             }
         }
 
@@ -196,7 +196,7 @@
     &-title {
         color: $bg;
         
-        font-weight: 500;
+        @include f500;
         font-size: 18px;
         display: block;
     }
@@ -210,7 +210,7 @@
     &-price{
         font-size: 20px;
         color: $bg;
-        font-weight: 700;
+        @include f700;
     }
     &-info {
        display: flex;
@@ -235,7 +235,7 @@
         }
         span{
             font-size: 14px;
-            font-weight: 500;
+            @include f500;
         }
     }
 }
@@ -268,3 +268,118 @@
 
 
 // end products
+
+.advantages {
+    background-color: $bg;
+    padding: 110px 0;
+}
+
+.advantages__title {
+    color: #fff;
+}
+
+.advantages__inner  {
+    display: flex;
+    justify-content: space-between;
+}  
+.advantages__item{
+    max-width:  370px;
+    text-align: center;
+    padding: 0px 15px;
+    transition: all .5s;
+    // Чтобы при наведении на svg картинки их фоновый цвет менялся
+    &:hover {
+        .advantages__item-images {
+           background-color: $green; 
+        }
+
+        .advantages__item-title {
+            color: $green;
+        }
+        .advantages__item-images{
+            g{
+             fill: #fff;   
+            }
+        }
+    }
+    &-images {
+       width: 114px;
+       height: 114px;
+       background-color: #fff;
+       border-radius: 50%;
+       display: flex;
+       justify-content: center;
+       align-items: center; 
+       margin: 0 auto 30px;
+       transition: all .5s;
+    }
+    &-title{
+        margin-bottom: 25px;
+        font-size: 24px;
+        color:#fff;
+        @include f500;
+        transition: all .5s;
+    }
+    &-text{
+        font-size: 15px;
+    }
+}
+
+.icosvg-1 {
+    svg{
+        width: 50px;
+    }
+    
+}
+.icosvg-2{
+    svg{
+        width: 70px;
+    }
+}
+.icosvg-3{
+    svg{
+        width: 86px;
+    }
+}
+//  end advantages
+
+// start author
+
+.author {
+   
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover; //чтобы на мобилной версии, лица нормально масштабировались
+    min-height: 750px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    &__box{
+      max-width: 650px;
+      width: 100%; 
+      min-height: 215px;
+      display: flex; 
+      align-items: center;
+      justify-content: center;
+      background-color: $green;
+    }
+    &__title {
+        font-size: 30px;
+        line-height: 30px;
+        color: #fff;
+        margin-right: 45px;
+        max-width: 260px;
+       
+        span{
+            @include f700;
+        }
+    }
+    &__link {
+       font-style: 18px;
+       line-height: 36px;
+       padding: 14px 40px;
+       background-color: #fff; 
+    }
+}
+
+// end author
